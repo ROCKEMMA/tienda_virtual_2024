@@ -8,7 +8,6 @@ function Cargar_productos(products_list){
         div.classList = "item_product";
 
         let short_text = product.title.split(' ').slice(0, 5).join(' ');
-        console.log(short_text);
 
         div.innerHTML = `
             <div class="box_img">
