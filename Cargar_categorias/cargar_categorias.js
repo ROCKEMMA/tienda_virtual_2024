@@ -1,15 +1,18 @@
-function Cargar_categorias(){
+async function Cargar_categorias(){
 
-    fetch('https://fakestoreapi.com/products/categories')
-        .then(res => res.json())
-        .then(categorias =>{
-            imprimir_categorias(categorias);   
-        })
+    try{
+        let obtener_categorias = await fetch('https://fakestoreapi.com/products/categories');
+        let categorias = await obtener_categorias.json();
+        imprimir_categorias(categorias);
+    }catch{
+        console.log("error");
+    }
 }
+
 
 function imprimir_categorias(lista_categorias){
 
-    let div_informacion = document.querySelector("#div_summery_description");
+    let div_informacion = document.querySelector("#category_menu");
 
     lista_categorias.forEach(element => {
         
@@ -19,8 +22,6 @@ function imprimir_categorias(lista_categorias){
             <label for="${element}">${element}</label>
         `;
         div_informacion.appendChild(div);
-
-        console.log(element);
     });
 
 }
