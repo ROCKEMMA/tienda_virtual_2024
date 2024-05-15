@@ -1,5 +1,5 @@
 // COMPONENTES DE LA TIENDA
-import { cargar_categorias } from "./Cargar_categorias/cargar_categorias.js";
+import { cargar_categorias } from "./cargar_categorias/cargar_categorias.js";
 import { cargar_header } from "./cargar_header/cargar_header.js";
 import { cargar_productos } from "./cargar_productos/cargar_productos.js";
 
