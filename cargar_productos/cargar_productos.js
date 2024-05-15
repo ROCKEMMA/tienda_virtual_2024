@@ -1,5 +1,5 @@
 
-function Cargar_productos(products_list){
+function cargar_productos(products_list){
     let div_product_list = document.querySelector("#div_product_list");
 
     products_list.forEach(product => {
@@ -24,4 +24,4 @@ function Cargar_productos(products_list){
 
 }
 
-export { Cargar_productos }
+export { cargar_productos }

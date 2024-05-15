@@ -1,4 +1,4 @@
-async function Cargar_categorias(){
+async function cargar_categorias(){
 
     try{
         let obtener_categorias = await fetch('https://fakestoreapi.com/products/categories');
@@ -26,4 +26,4 @@ function imprimir_categorias(lista_categorias){
 
 }
 
-export { Cargar_categorias }
+export { cargar_categorias }
