@@ -1,27 +1,53 @@
+function crearProductoHTML(product) {
+    let shortText = product.title.split(' ').slice(0, 5).join(' ');
 
-function cargar_productos(products_list){
-    let div_product_list = document.querySelector("#div_product_list");
+    // Crear elementos DOM
+    let divItem = document.createElement('div');
+    divItem.classList.add('item_product');
 
-    products_list.forEach(product => {
-        
-        let div = document.createElement("div");
-        div.classList = "item_product";
+    let divBoxImg = document.createElement('div');
+    divBoxImg.classList.add('box_img');
+    let img = document.createElement('img');
+    img.src = product.image;
+    img.alt = "";
+    divBoxImg.appendChild(img);
 
-        let short_text = product.title.split(' ').slice(0, 5).join(' ');
+    let divBoxDescription = document.createElement('div');
+    divBoxDescription.classList.add('box_description');
+    let spanName = document.createElement('span');
+    spanName.classList.add('name');
+    spanName.textContent = shortText;
+    let spanPrice = document.createElement('span');
+    spanPrice.classList.add('price');
+    spanPrice.textContent = `Q ${product.price}`;
+    let divBuyBtn = document.createElement('div');
+    divBuyBtn.classList.add('buy_btn');
+    divBuyBtn.id = product.id;
+    divBuyBtn.textContent = 'Comprar';
+    divBoxDescription.appendChild(spanName);
+    divBoxDescription.appendChild(spanPrice);
+    divBoxDescription.appendChild(divBuyBtn);
 
-        div.innerHTML = `
-            <div class="box_img">
-                <img src="${product.image}" alt="">
-            </div>
-            <div class="box_description">
-                <span class="name">${short_text}</span>
-                <span class="price">Q ${product.price}</span>
-                <div class="buy_btn" id="${product.id}">Comprar</div>
-            </div>
-        `;
-        div_product_list.appendChild(div);
-    });
+    divItem.appendChild(divBoxImg);
+    divItem.appendChild(divBoxDescription);
 
+    return divItem;
 }
 
-export { cargar_productos }
+
+async function cargarProductos(productos) {
+    try {
+        let productsList = await productos;
+        let divProductList = document.querySelector("#div_product_list");
+
+        productsList.forEach(product => {
+            let productElement = crearProductoHTML(product);
+            divProductList.appendChild(productElement);
+        });
+    } catch (error) {
+        console.log("Error al obtener productos de la API:", error);
+    }
+}
+
+
+export { cargarProductos };

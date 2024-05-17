@@ -1,0 +1,13 @@
+.div-carrito_ventana{
+    position: relative;
+}
+.ventana-carrito{
+    position: absolute;
+
+    width: 30rem;
+    height: 30rem;
+    right: 0;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+}
