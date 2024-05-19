@@ -1,5 +1,5 @@
 function crearProductoHTML(product) {
-    let shortText = product.title.split(' ').slice(0, 5).join(' ');
+    let shortText = product.title.split(' ').slice(0, 8).join(' ');
 
     // Crear elementos DOM
     let divItem = document.createElement('div');
