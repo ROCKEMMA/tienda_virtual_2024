@@ -9,3 +9,41 @@ html {
     font-family: "Inter", sans-serif;
 }
 
+:root {
+    --div-contenido : 140rem;
+}
+
+/* Media query para pantalla de 1366px */
+@media only screen and (max-width: 1366px) {
+    :root {
+        --div-contenido: 120rem;
+    }
+}
+
+/* Media query para pantalla de 1024px */
+@media only screen and (max-width: 1024px) {
+    :root {
+        --div-contenido: 96rem;
+    }
+}
+
+/* Media query para pantalla de 720px */
+@media only screen and (max-width: 720px) {
+    :root {
+        --div-contenido: 90%;
+    }
+}
+
+/* Media query para pantalla de 480px */
+@media only screen and (max-width: 480px) {
+    :root {
+        --div-contenido: 90%;
+    }
+}
+
+/* Media query para pantalla de 360px y menor */
+@media only screen and (max-width: 360px) {
+    :root {
+        --div-contenido: 90%;
+    }
+}
