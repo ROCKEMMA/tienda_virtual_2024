@@ -1,18 +1,18 @@
 // COMPONENTES DE LA TIENDA
-import { cargar_categorias } from "./cargar_categorias/cargar_categorias.js";
 import { cargar_header } from "./cargar_header/cargar_header.js";
-import { cargarProductos } from "./cargar_productos/cargar_productos.js";
+import { cargar_contenido } from "./cargar_contenido/cargar_contenido.js";
+//import { cargarProductos } from "./cargar_productos/cargar_productos.js";
 
-let DOM = document.querySelector("#root");
+const DOM = document.querySelector("#root");
 
 DOM.innerHTML = `
     <header></header>
-    <section id="category_menu"></section>
-    <main id="div_product_list"></main>
+    <main class="contenido"></main>
     <footer></footer>
 `;
 
-async function cargar_productos_api(){
+// INVENTARIO DE PRODUCTO
+async function obtener_inventario_api(){
     try{
         let obtener_datos = await fetch("https://fakestoreapi.com/products");
         let datos = await obtener_datos.json();
@@ -23,8 +23,6 @@ async function cargar_productos_api(){
     }
 }
 
-
-// ETAPAS DE CARGA DEL LA TIENDA
-cargarProductos(cargar_productos_api());
-cargar_categorias();
-cargar_header(cargar_productos_api());
+// CONTENIDO
+cargar_header(obtener_inventario_api(),1);
+cargar_contenido(obtener_inventario_api());

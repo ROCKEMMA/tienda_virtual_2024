@@ -12,7 +12,7 @@ async function cargar_categorias(){
 
 function imprimir_categorias(lista_categorias){
 
-    let div_informacion = document.querySelector("#category_menu");
+    let div_informacion = document.querySelector("#menu_categorias");
 
     lista_categorias.forEach(element => {
         

@@ -1,8 +1,11 @@
 #div_product_list {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
+    grid-auto-flow: dense;
+    /* Nueva propiedad para controlar la reorganización automática */
 }
+
 #div_product_list .item_product {
     width: 100%;
     height: 35rem;

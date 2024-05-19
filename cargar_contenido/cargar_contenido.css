@@ -1,0 +1,9 @@
+.contenido {
+    width: 100%;
+    max-width: 140rem;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 20rem auto;
+    column-gap: 1rem;
+}
