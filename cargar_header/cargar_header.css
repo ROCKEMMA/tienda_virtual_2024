@@ -4,7 +4,7 @@ header {
 }
 header .content {
     width: 100%;
-    max-width: 1400px;
+    max-width: var(--div-contenido);
     height: 100%;
     margin: auto;
     
@@ -18,3 +18,13 @@ header .content {
 .content img {
     cursor: pointer;
 }
+
+@media only screen and (max-width: 720px) {
+
+}
+
+@media only screen and (max-width: 480px) {
+
+}
+
+@media only screen and (max-width: 360px) {}
