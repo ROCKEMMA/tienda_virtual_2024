@@ -10,7 +10,7 @@ html {
 }
 
 :root {
-    --div-contenido : 140rem;
+    --div-contenido : 140rem;   
 }
 
 /* Media query para pantalla de 1366px */
@@ -20,6 +20,11 @@ html {
     }
 }
 
+@media only screen and (max-width: 1250px) {
+    :root {
+        --div-contenido: 96rem;
+    }
+}
 /* Media query para pantalla de 1024px */
 @media only screen and (max-width: 1024px) {
     :root {
