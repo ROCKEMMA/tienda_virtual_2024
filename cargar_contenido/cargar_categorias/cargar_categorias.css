@@ -1,23 +1,21 @@
 #menu_categorias {
     background-color: rgb(255, 255, 255);
+    padding: 1rem;
 
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
 }
 #menu_categorias div {
-    height: 100%;
     max-height: 5rem;
     background-color: #f3f3f3;
     font-size: 1.4rem;
     border-radius: 3px;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
 
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    cursor: pointer;
 }
 #menu_categorias div:hover {
     background-color: #e0e0e0;
@@ -25,6 +23,7 @@
 
 #menu_categorias div label {
     width: 100%;
+    
     cursor: pointer;
 
     display: flex;
