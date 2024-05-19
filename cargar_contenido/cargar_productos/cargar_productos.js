@@ -49,5 +49,4 @@ async function cargarProductos(productos) {
     }
 }
 
-
 export { cargarProductos };
